@@ -1,28 +1,36 @@
 #include <iostream>
-#include <ctime>
 
-class Numbers
+class Stack
 {
-public:
-    int m_numberOne;
-    int m_numberTwo;
+    int m_arrayStack [10];//sozdat massiv steca
+    int m_lengthArray;//dlinna steca
     
-    void setNumbers(int num1, int num2)
+public:
+  
+//sbros steca  
+    void reset()
     {
-        m_numberOne = num1;
-        m_numberTwo = num2;
+        m_arrayStack {};
+        m_lengthArray = 0;
     }
     
-    void printNumbers()
+//esli est mesto, pomestit cislo v stec
+    bool push(int value)
     {
-        std::cout << "Numbers(" << m_numberOne << ", " <<
+        if(m_lengthArray > 9)
+            return false;
+        else{
+            m_arrayStack[m_lengthArray] = value;
+            m_lengthArray++;
+        }
+    }
+    
+//izvlechenie iz steca, esli v stece pusto - assert
+    int pop()
+    {
+        if(m_lengthArray == 0){
+            
+        }
     }
     
 };
-
-
-int main(int argc, char *argv[])
-{
-
-    return 0;
-}
